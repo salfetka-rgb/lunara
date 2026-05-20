@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -8,6 +9,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 
 *{
@@ -16,107 +20,45 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'Montserrat',sans-serif;
     color:#F5F1E8;
     overflow-x:hidden;
-
     background-color:#0B1020;
 
     background-image:
     radial-gradient(circle at 20% 20%, rgba(212,175,55,0.12) 0%, transparent 25%),
     radial-gradient(circle at 80% 10%, rgba(255,255,255,0.06) 0%, transparent 30%),
     radial-gradient(circle at 40% 90%, rgba(120,90,255,0.10) 0%, transparent 35%),
-
-    /* узор точек */
     radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
 
-    background-size:
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    22px 22px;
-
-    background-position:
-    center,
-    center,
-    center,
-    0 0;
-
-    animation: movePattern 20s linear infinite;
+    background-size:100% 100%,100% 100%,100% 100%,22px 22px;
+    background-position:center,center,center,0 0;
 }
 
-/* лёгкое движение узора */
+/* NAV */
 
-@keyframes movePattern{
-    0%{
-        background-position:
-        center,
-        center,
-        center,
-        0 0;
-    }
-    100%{
-        background-position:
-        center,
-        center,
-        center,
-        200px 200px;
-    }
-}
-
-/* анимация движения фона */
-
-@keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
-
-/* Анимация переливания */
-
-@keyframes gradientFlow{
-
-    0%{
-        background-position:0% 50%;
-    }
-
-    50%{
-        background-position:100% 50%;
-    }
-
-    100%{
-        background-position:0% 50%;
-    }
-
-}
-
-family:'Montserrat',sans-serif;
-    background:#0B1020;
-    color:#F5F1E8;
-}
-
-/* NAVBAR */
 nav{
     width:100%;
     position:fixed;
     top:0;
     left:0;
-    padding:25px 8%;
+    padding:20px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     background:rgba(11,16,32,0.85);
     backdrop-filter:blur(10px);
     z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-.logo{
-    font-size:32px;
-    font-weight:700;
-    letter-spacing:4px;
-    color:#D4AF37;
-    font-family:'Cormorant Garamond', serif;
+.logo img{
+    height:70px;
 }
 
 nav ul{
@@ -128,8 +70,8 @@ nav ul{
 nav ul li a{
     text-decoration:none;
     color:#F5F1E8;
+    font-weight:500;
     transition:0.3s;
-    font-size:15px;
 }
 
 nav ul li a:hover{
@@ -140,69 +82,33 @@ nav ul li a:hover{
 
 .hero{
     height:100vh;
+
     background:
     linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
     url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1920&auto=format&fit=crop');
+
     background-size:cover;
     background-position:center;
+
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:20px;
+
+    padding:0 20px;
 }
 
-.hero-content h1{
+.hero h1{
     font-size:110px;
     font-family:'Cormorant Garamond', serif;
     color:#D4AF37;
-    letter-spacing:10px;
-    margin-bottom:15px;
+    letter-spacing:8px;
 }
 
-.hero-content p{
+.hero p{
+    margin-top:10px;
     font-size:24px;
-    margin-bottom:40px;
-    color:#F5F1E8;
-}
-
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    padding:15px 35px;
-    border:none;
-    text-decoration:none;
-    font-size:15px;
-    font-weight:600;
-    border-radius:50px;
-    transition:0.3s;
-    cursor:pointer;
-}
-
-.btn-gold{
-    background:#D4AF37;
-    color:#0B1020;
-}
-
-.btn-gold:hover{
-    background:#f1cf62;
-    transform:translateY(-3px);
-}
-
-.btn-outline{
-    border:1px solid #D4AF37;
-    color:#D4AF37;
-    background:transparent;
-}
-
-.btn-outline:hover{
-    background:#D4AF37;
-    color:#0B1020;
+    color:#fff;
 }
 
 /* SECTIONS */
@@ -213,18 +119,13 @@ section{
 
 .section-title{
     text-align:center;
-    margin-bottom:70px;
+    margin-bottom:60px;
 }
 
 .section-title h2{
     font-size:54px;
-    font-family:'Cormorant Garamond', serif;
     color:#D4AF37;
-    margin-bottom:10px;
-}
-
-.section-title p{
-    color:#ccc;
+    font-family:'Cormorant Garamond', serif;
 }
 
 /* ABOUT */
@@ -242,15 +143,41 @@ section{
     object-fit:cover;
 }
 
-.about-text h3{
-    font-size:40px;
-    margin-bottom:20px;
-    font-family:'Cormorant Garamond', serif;
+.about-text{
+    font-size:18px;
+    line-height:1.8;
+    color:#ddd;
 }
 
-.about-text p{
-    line-height:1.9;
-    color:#ddd;
+/* MOON FEATURE */
+
+.moon-light{
+    padding-top:40px;
+}
+
+.moon-box{
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(14px);
+    padding:40px;
+    border-radius:20px;
+    border:1px solid rgba(212,175,55,0.2);
+
+    max-width:800px;
+    margin:auto;
+}
+
+.moon-box p{
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+.moon-box ul{
+    list-style:none;
+}
+
+.moon-box li{
+    margin-bottom:15px;
+    font-size:18px;
 }
 
 /* MENU */
@@ -261,60 +188,23 @@ section{
     gap:30px;
 }
 
-/* GLASS EFFECT */
-
 .menu-card{
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
-    padding:35px;
-    border-radius:25px;
-
-    transition:0.35s;
-
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(14px);
+    padding:30px;
+    border-radius:20px;
     border:1px solid rgba(255,255,255,0.12);
-
-    box-shadow:
-    0 8px 32px rgba(0,0,0,0.35);
+    transition:0.3s;
 }
 
 .menu-card:hover{
-
-    transform:translateY(-10px);
-
-    border:1px solid rgba(212,175,55,0.45);
-
-    box-shadow:
-    0 10px 40px rgba(212,175,55,0.15);
-
+    transform:translateY(-5px);
+    border-color:rgba(212,175,55,0.5);
 }
 
-
-/* CONTACT GLASS */
-
-.contact-box{
-
-    background: rgba(255,255,255,0.06);
-
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-
-    padding:50px;
-
-    border-radius:30px;
-
-    text-align:center;
-
-    border:1px solid rgba(255,255,255,0.12);
-
-    box-shadow:
-    0 8px 32px rgba(0,0,0,0.35);
-
-}
 .menu-card h3{
     color:#D4AF37;
-    margin-bottom:25px;
+    margin-bottom:20px;
     font-size:28px;
     font-family:'Cormorant Garamond', serif;
 }
@@ -322,52 +212,50 @@ section{
 .menu-item{
     display:flex;
     justify-content:space-between;
-    margin-bottom:18px;
+    margin-bottom:15px;
     color:#eee;
-}
-
-.menu-item span{
-    color:#D4AF37;
 }
 
 /* GALLERY */
 
-.gallery{
+.gallery-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
 }
 
-.gallery img{
+.gallery-grid img{
     width:100%;
     height:320px;
     object-fit:cover;
     border-radius:20px;
-    transition:0.3s;
+    transition:0.4s;
 }
 
-.gallery img:hover{
+.gallery-grid img:hover{
     transform:scale(1.03);
 }
 
 /* CONTACT */
 
 .contact-box{
-    background:#13192e;
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(14px);
     padding:50px;
-    border-radius:30px;
+    border-radius:20px;
     text-align:center;
+    border:1px solid rgba(255,255,255,0.1);
 }
 
-.contact-box h3{
-    font-size:38px;
+.contact-box h2{
     color:#D4AF37;
-    margin-bottom:25px;
+    margin-bottom:20px;
+    font-size:42px;
     font-family:'Cormorant Garamond', serif;
 }
 
 .contact-box p{
-    margin-bottom:15px;
+    margin-bottom:10px;
     color:#ddd;
 }
 
@@ -376,55 +264,63 @@ section{
 footer{
     padding:35px;
     text-align:center;
-    border-top:1px solid rgba(255,255,255,0.1);
     color:#999;
+    border-top:1px solid rgba(255,255,255,0.08);
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 
-@media(max-width:900px){
+@media(max-width:768px){
 
-    .hero-content h1{
-        font-size:70px;
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav ul{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:60px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .section-title h2{
+        font-size:40px;
     }
 
     .about{
         grid-template-columns:1fr;
     }
 
-    nav ul{
-        display:none;
+    .contact-box{
+        padding:35px 20px;
     }
 
 }
-/* SCROLL ANIMATION */
 
-.hidden{
-    opacity:0;
-    transform:translateY(70px);
-    transition:
-    opacity 1s ease,
-    transform 1s ease;
-}
-
-.show{
-    opacity:1;
-    transform:translateY(0);
-}
 </style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 
 <nav>
 
 <div class="logo">
-    <img src="https://raw.githubusercontent.com/salfetka-rgb/lunara/main/chmo.png" alt="LUNARA" style="height:80px;">
+<img src="https://raw.githubusercontent.com/salfetka-rgb/lunara/main/chmo.png" alt="LUNARA Logo">
 </div>
 
 <ul>
 <li><a href="#about">О нас</a></li>
+<li><a href="#moon">Фишка</a></li>
 <li><a href="#menu">Меню</a></li>
 <li><a href="#gallery">Интерьер</a></li>
 <li><a href="#contact">Контакты</a></li>
@@ -436,17 +332,9 @@ footer{
 
 <section class="hero">
 
-<div class="hero-content">
-
+<div>
 <h1>LUNARA</h1>
-
 <p>Вкус, который светится ночью</p>
-
-<div class="hero-buttons">
-<a href="#contact" class="btn btn-gold">Забронировать стол</a>
-<a href="#menu" class="btn btn-outline">Посмотреть меню</a>
-</div>
-
 </div>
 
 </section>
@@ -457,170 +345,123 @@ footer{
 
 <div class="section-title">
 <h2>О ресторане</h2>
-<p>Современный lounge-ресторан с атмосферой вечернего города</p>
 </div>
 
 <div class="about">
 
-<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1200&auto=format&fit=crop" alt="Restaurant">
+<img
+src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1400&auto=format&fit=crop"
+alt="Restaurant"
+/>
 
 <div class="about-text">
-
-<h3>Эстетика ночи и авторская кухня</h3>
-
 <p>
-LUNARA — это место, где современный luxury-стиль встречается с уютом,
-мягким светом и атмосферой вечернего города.
-Мы создали пространство для людей, которые ценят не только вкус,
-но и эмоции, эстетику и особую атмосферу.
+LUNARA — lounge-ресторан с атмосферой ночного города,
+мягким светом, авторской кухней и музыкой,
+которая превращает обычный вечер в отдельную историю.
 </p>
-
 </div>
-
-
-</section>
 
 </div>
 
 </section>
-<section class="moon-light hidden">
+
+<!-- MOON FEATURE -->
+
+<section class="moon-light" id="moon">
 
 <div class="section-title">
 <h2>Фишка LUNARA</h2>
-<p>Лунное освещение</p>
 </div>
 
 <div class="moon-box">
 
 <p>
-Каждый час в ресторане включается режим «лунной ночи» —
-пространство полностью меняет атмосферу и погружает гостей в особое настроение.
+Каждый час ресторан переходит в режим
+«Лунной Ночи».
 </p>
 
 <ul>
-<li>🌙 Приглушается свет</li>
-<li>✨ Появляется проекция звёзд</li>
-<li>🎶 Играет атмосферная музыка</li>
+<li>🌙 Свет приглушается</li>
+<li>✨ Потолок превращается в звёздное небо</li>
+<li>🎶 Включается атмосферная музыка</li>
+<li>🍷 Гости получают special night menu</li>
 </ul>
 
-<p class="moon-note">
-Это создаёт вау-эффект и делает каждый визит уникальным опытом.
-</p>
-
 </div>
+
+</section>
 
 <!-- MENU -->
 
 <section id="menu">
 
-<section id="menu">
-
 <div class="section-title">
 <h2>Меню</h2>
-<p>Авторская кухня ресторана LUNARA</p>
 </div>
 
 <div class="menu-grid">
 
-<!-- ЗАКУСКИ -->
 <div class="menu-card">
+
 <h3>Закуски</h3>
 
-<div class="menu-item"><p>Брускетта с лососем</p><span>4200 ₸</span></div>
-<div class="menu-item"><p>Сырное плато</p><span>6500 ₸</span></div>
-<div class="menu-item"><p>Креветки в сливочном соусе</p><span>5800 ₸</span></div>
-<div class="menu-item"><p>Карпаччо из говядины</p><span>5600 ₸</span></div>
-<div class="menu-item"><p>Тартар из тунца</p><span>6200 ₸</span></div>
-<div class="menu-item"><p>Хрустящие баклажаны с терияки</p><span>3900 ₸</span></div>
-<div class="menu-item"><p>Мини-шашлычки куриные</p><span>4500 ₸</span></div>
-<div class="menu-item"><p>Рулетики из цукини</p><span>3400 ₸</span></div>
-<div class="menu-item"><p>Гуакамоле с начос</p><span>3600 ₸</span></div>
-<div class="menu-item"><p>Мидии в чесночном соусе</p><span>6700 ₸</span></div>
+<div class="menu-item">
+<span>Брускетта</span>
+<span>4200 ₸</span>
+</div>
+
+<div class="menu-item">
+<span>Сырное плато</span>
+<span>6500 ₸</span>
+</div>
+
+<div class="menu-item">
+<span>Карпаччо</span>
+<span>5800 ₸</span>
+</div>
 
 </div>
 
-<!-- САЛАТЫ -->
 <div class="menu-card">
-<h3>Салаты</h3>
 
-<div class="menu-item"><p>Цезарь с курицей</p><span>4200 ₸</span></div>
-<div class="menu-item"><p>Цезарь с креветками</p><span>5200 ₸</span></div>
-<div class="menu-item"><p>Греческий салат</p><span>3800 ₸</span></div>
-<div class="menu-item"><p>Салат с ростбифом</p><span>5900 ₸</span></div>
-<div class="menu-item"><p>Салат с киноа и авокадо</p><span>4600 ₸</span></div>
-<div class="menu-item"><p>Салат с лососем и апельсином</p><span>5600 ₸</span></div>
-<div class="menu-item"><p>Тёплый салат с телятиной</p><span>6200 ₸</span></div>
-<div class="menu-item"><p>Салат с баклажанами</p><span>4100 ₸</span></div>
-<div class="menu-item"><p>Салат с морепродуктами</p><span>6800 ₸</span></div>
-<div class="menu-item"><p>Фирменный LUNARA</p><span>6400 ₸</span></div>
-
-</div>
-
-<!-- СУПЫ -->
-<div class="menu-card">
-<h3>Супы</h3>
-
-<div class="menu-item"><p>Крем-суп из грибов</p><span>3200 ₸</span></div>
-<div class="menu-item"><p>Томатный суп</p><span>3000 ₸</span></div>
-<div class="menu-item"><p>Сырный суп с курицей</p><span>3500 ₸</span></div>
-<div class="menu-item"><p>Суп Том Ям</p><span>5200 ₸</span></div>
-<div class="menu-item"><p>Рамен с говядиной</p><span>4800 ₸</span></div>
-
-</div>
-
-<!-- ОСНОВНЫЕ БЛЮДА -->
-<div class="menu-card">
 <h3>Основные блюда</h3>
 
-<div class="menu-item"><p>Стейк из говядины</p><span>9800 ₸</span></div>
-<div class="menu-item"><p>Паста с трюфелем</p><span>7200 ₸</span></div>
-<div class="menu-item"><p>Лосось с овощами</p><span>8600 ₸</span></div>
-<div class="menu-item"><p>Утиная грудка</p><span>8900 ₸</span></div>
-<div class="menu-item"><p>Ризотто с грибами</p><span>6400 ₸</span></div>
-<div class="menu-item"><p>Филе миньон</p><span>11200 ₸</span></div>
-<div class="menu-item"><p>Курица в сливочном соусе</p><span>5900 ₸</span></div>
-<div class="menu-item"><p>Медальоны из телятины</p><span>9300 ₸</span></div>
-<div class="menu-item"><p>Бургер LUNARA</p><span>5500 ₸</span></div>
-<div class="menu-item"><p>Паста с морепродуктами</p><span>7800 ₸</span></div>
+<div class="menu-item">
+<span>Стейк Ribeye</span>
+<span>9800 ₸</span>
+</div>
+
+<div class="menu-item">
+<span>Паста Truffle</span>
+<span>7200 ₸</span>
+</div>
+
+<div class="menu-item">
+<span>Лосось Grill</span>
+<span>8700 ₸</span>
+</div>
 
 </div>
 
-<!-- ПИЦЦА -->
 <div class="menu-card">
-<h3>Пицца</h3>
 
-<div class="menu-item"><p>Маргарита</p><span>4200 ₸</span></div>
-<div class="menu-item"><p>Пепперони</p><span>4800 ₸</span></div>
-<div class="menu-item"><p>Четыре сыра</p><span>5600 ₸</span></div>
-<div class="menu-item"><p>С морепродуктами</p><span>6900 ₸</span></div>
-<div class="menu-item"><p>BBQ с курицей</p><span>5300 ₸</span></div>
-<div class="menu-item"><p>Фирменная LUNARA</p><span>7100 ₸</span></div>
-
-</div>
-
-<!-- ДЕСЕРТЫ -->
-<div class="menu-card">
 <h3>Десерты</h3>
 
-<div class="menu-item"><p>San Sebastian</p><span>3200 ₸</span></div>
-<div class="menu-item"><p>Фондан</p><span>3500 ₸</span></div>
-<div class="menu-item"><p>Тирамису</p><span>3000 ₸</span></div>
-<div class="menu-item"><p>Медовик</p><span>2800 ₸</span></div>
-<div class="menu-item"><p>Макаруны</p><span>2600 ₸</span></div>
-<div class="menu-item"><p>Панна-котта</p><span>2900 ₸</span></div>
-
+<div class="menu-item">
+<span>Чизкейк</span>
+<span>3500 ₸</span>
 </div>
 
-<!-- НАПИТКИ -->
-<div class="menu-card">
-<h3>Напитки</h3>
+<div class="menu-item">
+<span>Тирамису</span>
+<span>3900 ₸</span>
+</div>
 
-<div class="menu-item"><p>Лимонад клубника-мята</p><span>2200 ₸</span></div>
-<div class="menu-item"><p>Манго-маракуйя</p><span>2400 ₸</span></div>
-<div class="menu-item"><p>Капучино</p><span>1600 ₸</span></div>
-<div class="menu-item"><p>Латте</p><span>1800 ₸</span></div>
-<div class="menu-item"><p>Эспрессо</p><span>1400 ₸</span></div>
-<div class="menu-item"><p>Айс-латте</p><span>2100 ₸</span></div>
+<div class="menu-item">
+<span>LUNARA Moon Cake</span>
+<span>4500 ₸</span>
+</div>
 
 </div>
 
@@ -634,16 +475,24 @@ LUNARA — это место, где современный luxury-стиль в
 
 <div class="section-title">
 <h2>Интерьер</h2>
-<p>Атмосфера мягкого света и современного дизайна</p>
 </div>
 
-<div class="gallery">
+<div class="gallery-grid">
 
-<img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1200&auto=format&fit=crop" alt="Interior">
+<img
+src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop"
+alt=""
+>
 
-<img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1200&auto=format&fit=crop" alt="Interior">
+<img
+src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200&auto=format&fit=crop"
+alt=""
+>
 
-<img src="https://images.unsplash.com/photo-1515669097368-22e68427d265?q=80&w=1200&auto=format&fit=crop" alt="Interior">
+<img
+src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1200&auto=format&fit=crop"
+alt=""
+>
 
 </div>
 
@@ -653,23 +502,13 @@ LUNARA — это место, где современный luxury-стиль в
 
 <section id="contact">
 
-<div class="section-title">
-<h2>Контакты</h2>
-<p>Забронируйте стол уже сегодня</p>
-</div>
-
 <div class="contact-box">
 
-<h3>LUNARA Restaurant</h3>
+<h2>LUNARA Restaurant</h2>
 
 <p>📍 Алматы, Казахстан</p>
-<p>📞 +7 (777) 777-77-77</p>
-<p>📸 Instagram: @lunara.restaurant</p>
-<p>⏰ Ежедневно: 12:00 — 02:00</p>
-
-<br>
-
-<a href="#" class="btn btn-gold">Забронировать</a>
+<p>📞 +7 (777) 777 77 77</p>
+<p>🕒 18:00 — 03:00</p>
 
 </div>
 
@@ -678,8 +517,9 @@ LUNARA — это место, где современный luxury-стиль в
 <!-- FOOTER -->
 
 <footer>
-© 2026 LUNARA Restaurant — Все права защищены
+© 2026 LUNARA Restaurant
 </footer>
 
 </body>
 </html>
+```
